@@ -1,0 +1,3871 @@
+version 2
+run GreyHoleAttack-0-20240429-20:43:37-12032
+attr configname GreyHoleAttack
+attr datetime 20240429-20:43:37
+attr experiment GreyHoleAttack
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scenario
+attr processid 12032
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.node[*].**.attacking true
+param *.node[*].**.attackString "\"greyHole\""
+param *.node[*].**.greyHoleDropChance 75
+param *.node[*].numApps 1
+param *.node[*].app[0].typename "\"vanetattackpackage.veins_inet.AttackTestApp\""
+param *.node[*].app[0].interface "\"wlan0\""
+param *.node[*].wlan[0].opMode "\"p\""
+param *.node[*].wlan[0].radio.typename "\"Ieee80211DimensionalRadio\""
+param *.node[*].wlan[0].radio.bandName "\"5.9 GHz\""
+param *.node[*].wlan[0].radio.channelNumber 3
+param *.node[*].wlan[0].radio.transmitter.power 20mW
+param *.node[*].wlan[0].radio.bandwidth "10 MHz"
+param *.node[*].wlan[*].radio.antenna.mobility.typename "\"AttachedMobility\""
+param *.node[*].wlan[*].radio.antenna.mobility.mobilityModule "\"^.^.^.^.mobility\""
+param *.node[*].wlan[*].radio.antenna.mobility.offsetX -2.5m
+param *.node[*].wlan[*].radio.antenna.mobility.offsetZ 1.5m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMinX 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMaxX 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMinY 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMaxY 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMinZ 0m
+param *.node[*].wlan[*].radio.antenna.mobility.constraintAreaMaxZ 0m
+param *.node[*].ipv4.configurator.typename "\"HostAutoConfigurator\""
+param *.node[*].ipv4.configurator.interfaces "\"wlan0\""
+param *.node[*].ipv4.configurator.mcastGroups "\"224.0.0.1\""
+param *.node[*].mobility.typename "\"VeinsInetMobility\""
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"motorway.launchd.xml\")"
+param *.manager.moduleType "\"vanetattackpackage.veins_inet.VeinsInetAttackingCar\""
+
+vector 0 Scenario.node[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 Scenario.node[0].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 Scenario.node[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 3 Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 4 Scenario.node[1].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 Scenario.node[1].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 6 Scenario.node[1].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 8 Scenario.node[2].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 Scenario.node[2].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 10 Scenario.node[2].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 11 Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 12 Scenario.node[3].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 13 Scenario.node[3].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 14 Scenario.node[3].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 15 Scenario.node[3].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 16 Scenario.node[4].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 17 Scenario.node[4].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 18 Scenario.node[4].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 19 Scenario.node[4].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 20 Scenario.node[0].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 21 Scenario.node[0].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 22 Scenario.node[0].lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 23 Scenario.node[0].lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 24 Scenario.node[0].ipv4.ip totalPacketsReceieved:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageReceived
+attr title "packets received from network, vector(packetBytes)"
+vector 25 Scenario.node[0].ipv4.ip attackerPacketDropped:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageDropped
+attr title "packets dropped while attacking, vector(packetBytes)"
+vector 26 Scenario.node[0].wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 27 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 28 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 29 Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 30 Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 31 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 32 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 33 Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 34 Scenario.node[0].wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 35 Scenario.node[0].wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 36 Scenario.node[0].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 37 Scenario.node[0].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 38 Scenario.node[0].wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 39 Scenario.node[0].wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 40 Scenario.node[0].wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 41 Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 42 Scenario.node[1].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 43 Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 44 Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 45 Scenario.node[1].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 46 Scenario.node[1].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 47 Scenario.node[1].ipv4.ip totalPacketsReceieved:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageReceived
+attr title "packets received from network, vector(packetBytes)"
+vector 48 Scenario.node[1].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 49 Scenario.node[1].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 50 Scenario.node[1].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 51 Scenario.node[1].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 52 Scenario.node[1].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 53 Scenario.node[1].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 54 Scenario.node[1].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 55 Scenario.node[1].lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 56 Scenario.node[1].lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 57 Scenario.node[1].ipv4.ip attackerPacketDropped:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageDropped
+attr title "packets dropped while attacking, vector(packetBytes)"
+vector 58 Scenario.node[1].wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 59 Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 60 Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 61 Scenario.node[1].wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 62 Scenario.node[1].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 63 Scenario.node[2].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 64 Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 65 Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 66 Scenario.node[2].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 67 Scenario.node[2].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 68 Scenario.node[2].ipv4.ip totalPacketsReceieved:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageReceived
+attr title "packets received from network, vector(packetBytes)"
+vector 69 Scenario.node[2].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 70 Scenario.node[2].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 71 Scenario.node[2].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 72 Scenario.node[2].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 73 Scenario.node[2].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 74 Scenario.node[2].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 75 Scenario.node[2].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 76 Scenario.node[2].lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 77 Scenario.node[2].lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 78 Scenario.node[2].wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 79 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 80 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 81 Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 82 Scenario.node[2].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 83 Scenario.node[3].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 84 Scenario.node[3].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 85 Scenario.node[3].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 86 Scenario.node[3].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 87 Scenario.node[3].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 88 Scenario.node[3].ipv4.ip totalPacketsReceieved:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageReceived
+attr title "packets received from network, vector(packetBytes)"
+vector 89 Scenario.node[3].ipv4.ip attackerPacketDropped:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageDropped
+attr title "packets dropped while attacking, vector(packetBytes)"
+vector 90 Scenario.node[4].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 91 Scenario.node[4].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 92 Scenario.node[4].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 93 Scenario.node[4].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 94 Scenario.node[4].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 95 Scenario.node[4].ipv4.ip totalPacketsReceieved:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageReceived
+attr title "packets received from network, vector(packetBytes)"
+vector 96 Scenario.node[4].ipv4.ip attackerPacketDropped:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageDropped
+attr title "packets dropped while attacking, vector(packetBytes)"
+vector 97 Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 98 Scenario.node[1].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 99 Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 100 Scenario.node[1].wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 101 Scenario.node[1].wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 102 Scenario.node[1].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 103 Scenario.node[1].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 104 Scenario.node[1].wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 105 Scenario.node[1].wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 106 Scenario.node[1].wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 107 Scenario.node[1].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 108 Scenario.node[2].ipv4.ip attackerPacketDropped:vector(packetBytes) ETV
+attr interpolationmode none
+attr source messageDropped
+attr title "packets dropped while attacking, vector(packetBytes)"
+vector 109 Scenario.node[0].wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 110 Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 111 Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 112 Scenario.node[0].wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 113 Scenario.node[0].wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 114 Scenario.node[0].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 115 Scenario.node[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 116 Scenario.node[0].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 117 Scenario.node[0].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 118 Scenario.node[0].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 119 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 120 Scenario.node[2].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 121 Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 122 Scenario.node[2].wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 123 Scenario.node[2].wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 124 Scenario.node[2].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 125 Scenario.node[2].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 126 Scenario.node[2].wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 127 Scenario.node[2].wlan[0].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 128 Scenario.node[2].wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 129 Scenario.node[2].wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 130 Scenario.node[3].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 131 Scenario.node[4].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	12	1.1	0
+0	12	1.1	0
+0	12	1.1	2
+0	226	20	3
+0	233	20.000152	2
+0	332	20.000864724895	3
+0	339	20.001016724895	2
+1	12	1.1	3
+2	12	1.1	1
+2	226	20	0
+2	233	20.000152	1
+2	273	20.000314516922	3
+2	282	20.000466516922	1
+2	309	20.000576724895	3
+2	326	20.000728724895	1
+2	332	20.000864724895	0
+2	339	20.001016724895	1
+3	12	1.1	15
+4	25	2.1	0
+4	25	2.1	0
+4	25	2.1	2
+4	270	20.000314258461	3
+4	277	20.000466258461	2
+5	25	2.1	3
+6	25	2.1	1
+6	228	20.000000258461	3
+6	234	20.000152258461	1
+6	270	20.000314258461	0
+6	277	20.000466258461	1
+6	306	20.000576484767	3
+6	312	20.000728484767	1
+6	334	20.000864983356	3
+6	340	20.001016983356	1
+7	25	2.1	15
+8	38	3.1	0
+8	38	3.1	0
+8	38	3.1	2
+8	304	20.000576371614	3
+8	311	20.000728371614	2
+9	38	3.1	3
+10	38	3.1	1
+10	229	20.000000353281	3
+10	246	20.000152353281	1
+10	272	20.000314371614	3
+10	278	20.000466371614	1
+10	304	20.000576371614	0
+10	311	20.000728371614	1
+10	335	20.000865078176	3
+10	344	20.001017078176	1
+11	38	3.1	15
+12	61	5.1	0
+12	61	5.1	0
+12	61	5.1	2
+13	61	5.1	3
+14	61	5.1	1
+14	230	20.000000511809	3
+14	260	20.000152511809	1
+14	274	20.000314549699	3
+14	294	20.000466549699	1
+14	307	20.000576669537	3
+14	318	20.000728669537	1
+14	336	20.000865236704	3
+14	350	20.001017236704	1
+15	61	5.1	15
+16	74	6.1	0
+16	74	6.1	0
+16	74	6.1	2
+17	74	6.1	3
+18	74	6.1	1
+18	231	20.000000615437	3
+18	264	20.000152615437	1
+18	275	20.000314627404	3
+18	298	20.000466627404	1
+18	308	20.000576703199	3
+18	322	20.000728703199	1
+18	337	20.000865340332	3
+18	354	20.001017340332	1
+19	74	6.1	15
+20	216	20	100
+20	287	20.000466516922	100
+21	218	20	108
+21	288	20.000466516922	108
+22	220	20	128
+22	290	20.000466516922	128
+23	220	20	128
+23	290	20.000466516922	128
+24	222	20	128
+24	285	20.000466516922	128
+24	292	20.000466516922	128
+24	329	20.000728724895	128
+25	222	20	128
+25	292	20.000466516922	128
+25	329	20.000728724895	128
+26	223	20	130
+26	293	20.000466516922	130
+27	223	20	158
+27	293	20.000466516922	158
+28	223	20	1
+28	225	20	0
+28	293	20.000466516922	1
+28	331	20.000864724895	0
+29	223	20	8
+29	293	20.000466516922	10
+30	223	20	1
+30	224	20	0
+30	293	20.000466516922	1
+30	309	20.000576724895	0
+30	326	20.000728724895	1
+30	330	20.000864724895	0
+31	225	20	158
+31	331	20.000864724895	158
+32	225	20	0
+32	331	20.000864724895	0.000398207973
+33	225	20	1
+33	232	20.000152	0
+33	331	20.000864724895	1
+33	338	20.001016724895	0
+34	225	20	12000000
+34	331	20.000864724895	12000000
+35	225	20	158
+35	331	20.000864724895	158
+36	225	20	1
+36	232	20.000152	0
+36	331	20.000864724895	1
+36	338	20.001016724895	0
+37	226	20	1
+37	227	20	2
+37	232	20.000152	1
+37	233	20.000152	0
+37	332	20.000864724895	1
+37	333	20.000864724895	2
+37	338	20.001016724895	1
+37	339	20.001016724895	0
+38	232	20.000152	158
+38	338	20.001016724895	158
+39	232	20.000152	158
+39	338	20.001016724895	158
+40	232	20.000152	158
+40	338	20.001016724895	158
+41	232	20.000152	0.000152
+41	338	20.001016724895	0.000152
+42	235	20.000152258461	158
+42	313	20.000728484767	158
+42	341	20.001016983356	158
+43	235	20.000152258461	158
+43	313	20.000728484767	158
+43	341	20.001016983356	158
+44	235	20.000152258461	158
+44	313	20.000728484767	158
+44	341	20.001016983356	158
+45	235	20.000152258461	158
+45	313	20.000728484767	158
+45	341	20.001016983356	158
+46	235	20.000152258461	130
+46	313	20.000728484767	130
+46	341	20.001016983356	130
+47	237	20.000152258461	128
+47	244	20.000152258461	128
+47	315	20.000728484767	128
+47	343	20.001016983356	128
+48	238	20.000152258461	108
+48	316	20.000728484767	108
+49	238	20.000152258461	1
+49	316	20.000728484767	2
+50	239	20.000152258461	100
+50	317	20.000728484767	100
+51	239	0.1	0
+51	239	0.2	0
+51	239	0.3	0
+51	239	0.4	0
+51	239	0.5	0
+51	239	0.6	0
+51	239	0.7	0
+51	239	0.8	0
+51	239	0.9	0
+51	239	1	0
+51	239	1.1	0
+51	239	1.2	0
+51	239	1.3	0
+51	239	1.4	0
+51	239	1.5	0
+51	239	1.6	0
+51	239	1.7	0
+51	239	1.8	0
+51	239	1.9	0
+51	239	2	0
+51	239	2.1	0
+51	239	2.2	0
+51	239	2.3	0
+51	239	2.4	0
+51	239	2.5	0
+51	239	2.6	0
+51	239	2.7	0
+51	239	2.8	0
+51	239	2.9	0
+51	239	3	0
+51	239	3.1	0
+51	239	3.2	0
+51	239	3.3	0
+51	239	3.4	0
+51	239	3.5	0
+51	239	3.6	0
+51	239	3.7	0
+51	239	3.8	0
+51	239	3.9	0
+51	239	4	0
+51	239	4.1	0
+51	239	4.2	0
+51	239	4.3	0
+51	239	4.4	0
+51	239	4.5	0
+51	239	4.6	0
+51	239	4.7	0
+51	239	4.8	0
+51	239	4.9	0
+51	239	5	0
+51	239	5.1	0
+51	239	5.2	0
+51	239	5.3	0
+51	239	5.4	0
+51	239	5.5	0
+51	239	5.6	0
+51	239	5.7	0
+51	239	5.8	0
+51	239	5.9	0
+51	239	6	0
+51	239	6.1	0
+51	239	6.2	0
+51	239	6.3	0
+51	239	6.4	0
+51	239	6.5	0
+51	239	6.6	0
+51	239	6.7	0
+51	239	6.8	0
+51	239	6.9	0
+51	239	7	0
+51	239	7.1	0
+51	239	7.2	0
+51	239	7.3	0
+51	239	7.4	0
+51	239	7.5	0
+51	239	7.6	0
+51	239	7.7	0
+51	239	7.8	0
+51	239	7.9	0
+51	239	8	0
+51	239	8.1	0
+51	239	8.2	0
+51	239	8.3	0
+51	239	8.4	0
+51	239	8.5	0
+51	239	8.6	0
+51	239	8.7	0
+51	239	8.8	0
+51	239	8.9	0
+51	239	9	0
+51	239	9.1	0
+51	239	9.2	0
+51	239	9.3	0
+51	239	9.4	0
+51	239	9.5	0
+51	239	9.6	0
+51	239	9.7	0
+51	239	9.8	0
+51	239	9.9	0
+51	239	10	0
+51	239	10.1	0
+51	239	10.2	0
+51	239	10.3	0
+51	239	10.4	0
+51	239	10.5	0
+51	239	10.6	0
+51	239	10.7	0
+51	239	10.8	0
+51	239	10.9	0
+51	239	11	0
+51	239	11.1	0
+51	239	11.2	0
+51	239	11.3	0
+51	239	11.4	0
+51	239	11.5	0
+51	239	11.6	0
+51	239	11.7	0
+51	239	11.8	0
+51	239	11.9	0
+51	239	12	0
+51	239	12.1	0
+51	239	12.2	0
+51	239	12.3	0
+51	239	12.4	0
+51	239	12.5	0
+51	239	12.6	0
+51	239	12.7	0
+51	239	12.8	0
+51	239	12.9	0
+51	239	13	0
+51	239	13.1	0
+51	239	13.2	0
+51	239	13.3	0
+51	239	13.4	0
+51	239	13.5	0
+51	239	13.6	0
+51	239	13.7	0
+51	239	13.8	0
+51	239	13.9	0
+51	239	14	0
+51	239	14.1	0
+51	239	14.2	0
+51	239	14.3	0
+51	239	14.4	0
+51	239	14.5	0
+51	239	14.6	0
+51	239	14.7	0
+51	239	14.8	0
+51	239	14.9	0
+51	239	15	0
+51	239	15.1	0
+51	239	15.2	0
+51	239	15.3	0
+51	239	15.4	0
+51	239	15.5	0
+51	239	15.6	0
+51	239	15.7	0
+51	239	15.8	0
+51	239	15.9	0
+51	239	16	0
+51	239	16.1	0
+51	239	16.2	0
+51	239	16.3	0
+51	239	16.4	0
+51	239	16.5	0
+51	239	16.6	0
+51	239	16.7	0
+51	239	16.8	0
+51	239	16.9	0
+51	239	17	0
+51	239	17.1	0
+51	239	17.2	0
+51	239	17.3	0
+51	239	17.4	0
+51	239	17.5	0
+51	239	17.6	0
+51	239	17.7	0
+51	239	17.8	0
+51	239	17.9	0
+51	239	18	0
+51	239	18.1	0
+51	239	18.2	0
+51	239	18.3	0
+51	239	18.4	0
+51	239	18.5	0
+51	239	18.6	0
+51	239	18.7	0
+51	239	18.8	0
+51	239	18.9	0
+51	239	19	0
+51	239	19.1	0
+51	239	19.2	0
+51	239	19.3	0
+51	239	19.4	0
+51	239	19.5	0
+51	239	19.6	0
+51	239	19.7	0
+51	239	19.8	0
+51	239	19.9	0
+51	239	20	0
+51	763	20.1	16000
+51	763	20.2	0
+51	763	20.3	0
+51	763	20.4	0
+51	763	20.5	0
+51	763	20.6	0
+51	763	20.7	0
+51	763	20.8	0
+51	763	20.9	0
+51	763	21	0
+51	763	21.1	0
+51	763	21.2	0
+51	763	21.3	0
+51	763	21.4	0
+51	763	21.5	0
+51	763	21.6	0
+51	763	21.7	0
+51	763	21.8	0
+51	763	21.9	0
+51	763	22	0
+51	763	22.1	0
+51	763	22.2	0
+51	763	22.3	0
+51	763	22.4	0
+51	763	22.5	0
+51	763	22.6	0
+51	763	22.7	0
+51	763	22.8	0
+51	763	22.9	0
+51	763	23	0
+51	763	23.1	0
+51	763	23.2	0
+51	763	23.3	0
+51	763	23.4	0
+51	763	23.5	0
+51	763	23.6	0
+51	763	23.7	0
+51	763	23.8	0
+51	763	23.9	0
+51	763	24	0
+51	763	24.1	0
+51	763	24.2	0
+51	763	24.3	0
+51	763	24.4	0
+51	763	24.5	0
+51	763	24.6	0
+51	763	24.7	0
+51	763	24.8	0
+51	763	24.9	0
+51	763	25	0
+51	763	25.1	0
+51	763	25.2	0
+51	763	25.3	0
+51	763	25.4	0
+51	763	25.5	0
+51	763	25.6	0
+51	763	25.7	0
+51	763	25.8	0
+51	763	25.9	0
+51	763	26	0
+51	763	26.1	0
+51	763	26.2	0
+51	763	26.3	0
+51	763	26.4	0
+51	763	26.5	0
+51	763	26.6	0
+51	763	26.7	0
+51	763	26.8	0
+51	763	26.9	0
+51	763	27	0
+51	763	27.1	0
+51	763	27.2	0
+51	763	27.3	0
+51	763	27.4	0
+51	763	27.5	0
+51	763	27.6	0
+51	763	27.7	0
+51	763	27.8	0
+51	763	27.9	0
+51	763	28	0
+51	763	28.1	0
+51	763	28.2	0
+51	763	28.3	0
+51	763	28.4	0
+51	763	28.5	0
+51	763	28.6	0
+51	763	28.7	0
+51	763	28.8	0
+51	763	28.9	0
+51	763	29	0
+51	763	29.1	0
+51	763	29.2	0
+51	763	29.3	0
+51	763	29.4	0
+51	763	29.5	0
+51	763	29.6	0
+51	763	29.7	0
+51	763	29.8	0
+51	763	29.9	0
+51	763	30	0
+51	763	30.1	0
+51	763	30.2	0
+51	763	30.3	0
+51	763	30.4	0
+51	763	30.5	0
+51	763	30.6	0
+51	763	30.7	0
+51	763	30.8	0
+51	763	30.9	0
+51	763	31	0
+51	763	31.1	0
+51	763	31.2	0
+51	763	31.3	0
+51	763	31.4	0
+51	763	31.5	0
+51	763	31.6	0
+51	763	31.7	0
+51	763	31.8	0
+51	763	31.9	0
+51	763	32	0
+51	763	32.1	0
+51	763	32.2	0
+51	763	32.3	0
+51	763	32.4	0
+51	763	32.5	0
+51	763	32.6	0
+51	763	32.7	0
+51	763	32.8	0
+51	763	32.9	0
+51	763	33	0
+51	763	33.1	0
+51	763	33.2	0
+51	763	33.3	0
+51	763	33.4	0
+51	763	33.5	0
+51	763	33.6	0
+51	763	33.7	0
+51	763	33.8	0
+51	763	33.9	0
+51	763	34	0
+51	763	34.1	0
+51	763	34.2	0
+51	763	34.3	0
+51	763	34.4	0
+51	763	34.5	0
+51	763	34.6	0
+51	763	34.7	0
+51	763	34.8	0
+51	763	34.9	0
+51	763	35	0
+51	763	35.1	0
+51	763	35.2	0
+51	763	35.3	0
+51	763	35.4	0
+51	763	35.5	0
+51	763	35.6	0
+51	763	35.7	0
+51	763	35.8	0
+51	763	35.9	0
+51	763	36	0
+51	763	36.1	0
+51	763	36.2	0
+51	763	36.3	0
+51	763	36.4	0
+51	763	36.5	0
+51	763	36.6	0
+51	763	36.7	0
+51	763	36.8	0
+51	763	36.9	0
+51	763	37	0
+51	763	37.1	0
+51	763	37.2	0
+51	763	37.3	0
+51	763	37.4	0
+51	763	37.5	0
+51	763	37.6	0
+51	763	37.7	0
+51	763	37.8	0
+51	763	37.9	0
+51	763	38	0
+51	763	38.1	0
+51	763	38.2	0
+51	763	38.3	0
+51	763	38.4	0
+51	763	38.5	0
+51	763	38.6	0
+51	763	38.7	0
+51	763	38.8	0
+51	763	38.9	0
+51	763	39	0
+51	763	39.1	0
+51	763	39.2	0
+51	763	39.3	0
+51	763	39.4	0
+51	763	39.5	0
+51	763	39.6	0
+51	763	39.7	0
+51	763	39.8	0
+51	763	39.9	0
+51	763	40	0
+51	763	40.1	0
+51	763	40.2	0
+51	763	40.3	0
+51	763	40.4	0
+51	763	40.5	0
+51	763	40.6	0
+51	763	40.7	0
+51	763	40.8	0
+51	763	40.9	0
+51	763	41	0
+51	763	41.1	0
+51	763	41.2	0
+51	763	41.3	0
+51	763	41.4	0
+51	763	41.5	0
+51	763	41.6	0
+51	763	41.7	0
+51	763	41.8	0
+51	763	41.9	0
+51	763	42	0
+51	763	42.1	0
+51	763	42.2	0
+51	763	42.3	0
+51	763	42.4	0
+51	763	42.5	0
+51	763	42.6	0
+51	763	42.7	0
+51	763	42.8	0
+51	763	42.9	0
+51	763	43	0
+51	763	43.1	0
+51	763	43.2	0
+51	763	43.3	0
+51	763	43.4	0
+51	763	43.5	0
+51	763	43.6	0
+51	763	43.7	0
+51	763	43.8	0
+51	763	43.9	0
+51	763	44	0
+51	763	44.1	0
+51	763	44.2	0
+51	763	44.3	0
+51	763	44.4	0
+51	763	44.5	0
+51	763	44.6	0
+51	763	44.7	0
+51	763	44.8	0
+51	763	44.9	0
+51	763	45	0
+51	763	45.1	0
+51	763	45.2	0
+51	763	45.3	0
+51	763	45.4	0
+51	763	45.5	0
+51	763	45.6	0
+51	763	45.7	0
+51	763	45.8	0
+51	763	45.9	0
+51	763	46	0
+51	763	46.1	0
+51	763	46.2	0
+51	763	46.3	0
+51	763	46.4	0
+51	763	46.5	0
+51	763	46.6	0
+51	763	46.7	0
+51	763	46.8	0
+51	763	46.9	0
+51	763	47	0
+51	763	47.1	0
+51	763	47.2	0
+51	763	47.3	0
+51	763	47.4	0
+51	763	47.5	0
+51	763	47.6	0
+51	763	47.7	0
+51	763	47.8	0
+51	763	47.9	0
+51	763	48	0
+51	763	48.1	0
+51	763	48.2	0
+51	763	48.3	0
+51	763	48.4	0
+51	763	48.5	0
+51	763	48.6	0
+51	763	48.7	0
+51	763	48.8	0
+51	763	48.9	0
+51	763	49	0
+51	763	49.1	0
+51	763	49.2	0
+51	763	49.3	0
+51	763	49.4	0
+51	763	49.5	0
+51	763	49.6	0
+51	763	49.7	0
+51	763	49.8	0
+51	763	49.9	0
+51	763	50	0
+51	763	50.1	0
+51	763	50.2	0
+51	763	50.3	0
+51	763	50.4	0
+51	763	50.5	0
+51	763	50.6	0
+51	763	50.7	0
+51	763	50.8	0
+51	763	50.9	0
+51	763	51	0
+51	763	51.1	0
+51	763	51.2	0
+51	763	51.3	0
+51	763	51.4	0
+51	763	51.5	0
+51	763	51.6	0
+51	763	51.7	0
+51	763	51.8	0
+51	763	51.9	0
+51	763	52	0
+51	763	52.1	0
+51	763	52.2	0
+51	763	52.3	0
+51	763	52.4	0
+51	763	52.5	0
+51	763	52.6	0
+51	763	52.7	0
+51	763	52.8	0
+51	763	52.9	0
+51	763	53	0
+51	763	53.1	0
+51	763	53.2	0
+51	763	53.3	0
+51	763	53.4	0
+51	763	53.5	0
+51	763	53.6	0
+51	763	53.7	0
+51	763	53.8	0
+51	763	53.9	0
+51	763	54	0
+51	763	54.1	0
+51	763	54.2	0
+51	763	54.3	0
+51	763	54.4	0
+51	763	54.5	0
+51	763	54.6	0
+51	763	54.7	0
+51	763	54.8	0
+51	763	54.9	0
+51	763	55	0
+51	763	55.1	0
+51	763	55.2	0
+51	763	55.3	0
+51	763	55.4	0
+51	763	55.5	0
+51	763	55.6	0
+51	763	55.7	0
+51	763	55.8	0
+51	763	55.9	0
+51	763	56	0
+51	763	56.1	0
+51	763	56.2	0
+51	763	56.3	0
+51	763	56.4	0
+51	763	56.5	0
+51	763	56.6	0
+51	763	56.7	0
+51	763	56.8	0
+51	763	56.9	0
+51	763	57	0
+51	763	57.1	0
+51	763	57.2	0
+51	763	57.3	0
+51	763	57.4	0
+51	763	57.5	0
+51	763	57.6	0
+51	763	57.7	0
+51	763	57.8	0
+51	763	57.9	0
+51	763	58	0
+51	763	58.1	0
+51	763	58.2	0
+51	763	58.3	0
+51	763	58.4	0
+51	763	58.5	0
+51	763	58.6	0
+51	763	58.7	0
+51	763	58.8	0
+51	763	58.9	0
+51	763	59	0
+51	763	59.1	0
+51	763	59.2	0
+51	763	59.3	0
+51	763	59.4	0
+51	763	59.5	0
+51	763	59.6	0
+51	763	59.7	0
+51	763	59.8	0
+51	763	59.9	0
+51	763	60	0
+52	239	20.000152258461	0.000152258461
+52	317	20.000728484767	0.000728484767
+53	239	20.000152258461	100
+54	240	20.000152258461	108
+55	242	20.000152258461	128
+56	242	20.000152258461	128
+57	244	20.000152258461	128
+57	343	20.001016983356	128
+58	245	20.000152258461	130
+59	245	20.000152258461	158
+60	245	20.000152258461	1
+60	269	20.000314258461	0
+61	245	20.000152258461	8
+62	245	20.000152258461	1
+62	268	20.000314258461	0
+63	247	20.000152353281	158
+63	279	20.000466371614	158
+63	345	20.001017078176	158
+64	247	20.000152353281	158
+64	279	20.000466371614	158
+64	345	20.001017078176	158
+65	247	20.000152353281	158
+65	279	20.000466371614	158
+65	345	20.001017078176	158
+66	247	20.000152353281	158
+66	279	20.000466371614	158
+66	345	20.001017078176	158
+67	247	20.000152353281	130
+67	279	20.000466371614	130
+67	345	20.001017078176	130
+68	249	20.000152353281	128
+68	256	20.000152353281	128
+68	281	20.000466371614	128
+68	347	20.001017078176	128
+69	250	20.000152353281	108
+69	258	20.000152353281	108
+69	348	20.001017078176	108
+70	250	20.000152353281	1
+70	258	20.000152353281	2
+70	348	20.001017078176	3
+71	251	20.000152353281	100
+71	259	20.000152353281	100
+71	349	20.001017078176	100
+72	251	0.1	0
+72	251	0.2	0
+72	251	0.3	0
+72	251	0.4	0
+72	251	0.5	0
+72	251	0.6	0
+72	251	0.7	0
+72	251	0.8	0
+72	251	0.9	0
+72	251	1	0
+72	251	1.1	0
+72	251	1.2	0
+72	251	1.3	0
+72	251	1.4	0
+72	251	1.5	0
+72	251	1.6	0
+72	251	1.7	0
+72	251	1.8	0
+72	251	1.9	0
+72	251	2	0
+72	251	2.1	0
+72	251	2.2	0
+72	251	2.3	0
+72	251	2.4	0
+72	251	2.5	0
+72	251	2.6	0
+72	251	2.7	0
+72	251	2.8	0
+72	251	2.9	0
+72	251	3	0
+72	251	3.1	0
+72	251	3.2	0
+72	251	3.3	0
+72	251	3.4	0
+72	251	3.5	0
+72	251	3.6	0
+72	251	3.7	0
+72	251	3.8	0
+72	251	3.9	0
+72	251	4	0
+72	251	4.1	0
+72	251	4.2	0
+72	251	4.3	0
+72	251	4.4	0
+72	251	4.5	0
+72	251	4.6	0
+72	251	4.7	0
+72	251	4.8	0
+72	251	4.9	0
+72	251	5	0
+72	251	5.1	0
+72	251	5.2	0
+72	251	5.3	0
+72	251	5.4	0
+72	251	5.5	0
+72	251	5.6	0
+72	251	5.7	0
+72	251	5.8	0
+72	251	5.9	0
+72	251	6	0
+72	251	6.1	0
+72	251	6.2	0
+72	251	6.3	0
+72	251	6.4	0
+72	251	6.5	0
+72	251	6.6	0
+72	251	6.7	0
+72	251	6.8	0
+72	251	6.9	0
+72	251	7	0
+72	251	7.1	0
+72	251	7.2	0
+72	251	7.3	0
+72	251	7.4	0
+72	251	7.5	0
+72	251	7.6	0
+72	251	7.7	0
+72	251	7.8	0
+72	251	7.9	0
+72	251	8	0
+72	251	8.1	0
+72	251	8.2	0
+72	251	8.3	0
+72	251	8.4	0
+72	251	8.5	0
+72	251	8.6	0
+72	251	8.7	0
+72	251	8.8	0
+72	251	8.9	0
+72	251	9	0
+72	251	9.1	0
+72	251	9.2	0
+72	251	9.3	0
+72	251	9.4	0
+72	251	9.5	0
+72	251	9.6	0
+72	251	9.7	0
+72	251	9.8	0
+72	251	9.9	0
+72	251	10	0
+72	251	10.1	0
+72	251	10.2	0
+72	251	10.3	0
+72	251	10.4	0
+72	251	10.5	0
+72	251	10.6	0
+72	251	10.7	0
+72	251	10.8	0
+72	251	10.9	0
+72	251	11	0
+72	251	11.1	0
+72	251	11.2	0
+72	251	11.3	0
+72	251	11.4	0
+72	251	11.5	0
+72	251	11.6	0
+72	251	11.7	0
+72	251	11.8	0
+72	251	11.9	0
+72	251	12	0
+72	251	12.1	0
+72	251	12.2	0
+72	251	12.3	0
+72	251	12.4	0
+72	251	12.5	0
+72	251	12.6	0
+72	251	12.7	0
+72	251	12.8	0
+72	251	12.9	0
+72	251	13	0
+72	251	13.1	0
+72	251	13.2	0
+72	251	13.3	0
+72	251	13.4	0
+72	251	13.5	0
+72	251	13.6	0
+72	251	13.7	0
+72	251	13.8	0
+72	251	13.9	0
+72	251	14	0
+72	251	14.1	0
+72	251	14.2	0
+72	251	14.3	0
+72	251	14.4	0
+72	251	14.5	0
+72	251	14.6	0
+72	251	14.7	0
+72	251	14.8	0
+72	251	14.9	0
+72	251	15	0
+72	251	15.1	0
+72	251	15.2	0
+72	251	15.3	0
+72	251	15.4	0
+72	251	15.5	0
+72	251	15.6	0
+72	251	15.7	0
+72	251	15.8	0
+72	251	15.9	0
+72	251	16	0
+72	251	16.1	0
+72	251	16.2	0
+72	251	16.3	0
+72	251	16.4	0
+72	251	16.5	0
+72	251	16.6	0
+72	251	16.7	0
+72	251	16.8	0
+72	251	16.9	0
+72	251	17	0
+72	251	17.1	0
+72	251	17.2	0
+72	251	17.3	0
+72	251	17.4	0
+72	251	17.5	0
+72	251	17.6	0
+72	251	17.7	0
+72	251	17.8	0
+72	251	17.9	0
+72	251	18	0
+72	251	18.1	0
+72	251	18.2	0
+72	251	18.3	0
+72	251	18.4	0
+72	251	18.5	0
+72	251	18.6	0
+72	251	18.7	0
+72	251	18.8	0
+72	251	18.9	0
+72	251	19	0
+72	251	19.1	0
+72	251	19.2	0
+72	251	19.3	0
+72	251	19.4	0
+72	251	19.5	0
+72	251	19.6	0
+72	251	19.7	0
+72	251	19.8	0
+72	251	19.9	0
+72	251	20	0
+72	763	20.1	24000
+72	763	20.2	0
+72	763	20.3	0
+72	763	20.4	0
+72	763	20.5	0
+72	763	20.6	0
+72	763	20.7	0
+72	763	20.8	0
+72	763	20.9	0
+72	763	21	0
+72	763	21.1	0
+72	763	21.2	0
+72	763	21.3	0
+72	763	21.4	0
+72	763	21.5	0
+72	763	21.6	0
+72	763	21.7	0
+72	763	21.8	0
+72	763	21.9	0
+72	763	22	0
+72	763	22.1	0
+72	763	22.2	0
+72	763	22.3	0
+72	763	22.4	0
+72	763	22.5	0
+72	763	22.6	0
+72	763	22.7	0
+72	763	22.8	0
+72	763	22.9	0
+72	763	23	0
+72	763	23.1	0
+72	763	23.2	0
+72	763	23.3	0
+72	763	23.4	0
+72	763	23.5	0
+72	763	23.6	0
+72	763	23.7	0
+72	763	23.8	0
+72	763	23.9	0
+72	763	24	0
+72	763	24.1	0
+72	763	24.2	0
+72	763	24.3	0
+72	763	24.4	0
+72	763	24.5	0
+72	763	24.6	0
+72	763	24.7	0
+72	763	24.8	0
+72	763	24.9	0
+72	763	25	0
+72	763	25.1	0
+72	763	25.2	0
+72	763	25.3	0
+72	763	25.4	0
+72	763	25.5	0
+72	763	25.6	0
+72	763	25.7	0
+72	763	25.8	0
+72	763	25.9	0
+72	763	26	0
+72	763	26.1	0
+72	763	26.2	0
+72	763	26.3	0
+72	763	26.4	0
+72	763	26.5	0
+72	763	26.6	0
+72	763	26.7	0
+72	763	26.8	0
+72	763	26.9	0
+72	763	27	0
+72	763	27.1	0
+72	763	27.2	0
+72	763	27.3	0
+72	763	27.4	0
+72	763	27.5	0
+72	763	27.6	0
+72	763	27.7	0
+72	763	27.8	0
+72	763	27.9	0
+72	763	28	0
+72	763	28.1	0
+72	763	28.2	0
+72	763	28.3	0
+72	763	28.4	0
+72	763	28.5	0
+72	763	28.6	0
+72	763	28.7	0
+72	763	28.8	0
+72	763	28.9	0
+72	763	29	0
+72	763	29.1	0
+72	763	29.2	0
+72	763	29.3	0
+72	763	29.4	0
+72	763	29.5	0
+72	763	29.6	0
+72	763	29.7	0
+72	763	29.8	0
+72	763	29.9	0
+72	763	30	0
+72	763	30.1	0
+72	763	30.2	0
+72	763	30.3	0
+72	763	30.4	0
+72	763	30.5	0
+72	763	30.6	0
+72	763	30.7	0
+72	763	30.8	0
+72	763	30.9	0
+72	763	31	0
+72	763	31.1	0
+72	763	31.2	0
+72	763	31.3	0
+72	763	31.4	0
+72	763	31.5	0
+72	763	31.6	0
+72	763	31.7	0
+72	763	31.8	0
+72	763	31.9	0
+72	763	32	0
+72	763	32.1	0
+72	763	32.2	0
+72	763	32.3	0
+72	763	32.4	0
+72	763	32.5	0
+72	763	32.6	0
+72	763	32.7	0
+72	763	32.8	0
+72	763	32.9	0
+72	763	33	0
+72	763	33.1	0
+72	763	33.2	0
+72	763	33.3	0
+72	763	33.4	0
+72	763	33.5	0
+72	763	33.6	0
+72	763	33.7	0
+72	763	33.8	0
+72	763	33.9	0
+72	763	34	0
+72	763	34.1	0
+72	763	34.2	0
+72	763	34.3	0
+72	763	34.4	0
+72	763	34.5	0
+72	763	34.6	0
+72	763	34.7	0
+72	763	34.8	0
+72	763	34.9	0
+72	763	35	0
+72	763	35.1	0
+72	763	35.2	0
+72	763	35.3	0
+72	763	35.4	0
+72	763	35.5	0
+72	763	35.6	0
+72	763	35.7	0
+72	763	35.8	0
+72	763	35.9	0
+72	763	36	0
+72	763	36.1	0
+72	763	36.2	0
+72	763	36.3	0
+72	763	36.4	0
+72	763	36.5	0
+72	763	36.6	0
+72	763	36.7	0
+72	763	36.8	0
+72	763	36.9	0
+72	763	37	0
+72	763	37.1	0
+72	763	37.2	0
+72	763	37.3	0
+72	763	37.4	0
+72	763	37.5	0
+72	763	37.6	0
+72	763	37.7	0
+72	763	37.8	0
+72	763	37.9	0
+72	763	38	0
+72	763	38.1	0
+72	763	38.2	0
+72	763	38.3	0
+72	763	38.4	0
+72	763	38.5	0
+72	763	38.6	0
+72	763	38.7	0
+72	763	38.8	0
+72	763	38.9	0
+72	763	39	0
+72	763	39.1	0
+72	763	39.2	0
+72	763	39.3	0
+72	763	39.4	0
+72	763	39.5	0
+72	763	39.6	0
+72	763	39.7	0
+72	763	39.8	0
+72	763	39.9	0
+72	763	40	0
+72	763	40.1	0
+72	763	40.2	0
+72	763	40.3	0
+72	763	40.4	0
+72	763	40.5	0
+72	763	40.6	0
+72	763	40.7	0
+72	763	40.8	0
+72	763	40.9	0
+72	763	41	0
+72	763	41.1	0
+72	763	41.2	0
+72	763	41.3	0
+72	763	41.4	0
+72	763	41.5	0
+72	763	41.6	0
+72	763	41.7	0
+72	763	41.8	0
+72	763	41.9	0
+72	763	42	0
+72	763	42.1	0
+72	763	42.2	0
+72	763	42.3	0
+72	763	42.4	0
+72	763	42.5	0
+72	763	42.6	0
+72	763	42.7	0
+72	763	42.8	0
+72	763	42.9	0
+72	763	43	0
+72	763	43.1	0
+72	763	43.2	0
+72	763	43.3	0
+72	763	43.4	0
+72	763	43.5	0
+72	763	43.6	0
+72	763	43.7	0
+72	763	43.8	0
+72	763	43.9	0
+72	763	44	0
+72	763	44.1	0
+72	763	44.2	0
+72	763	44.3	0
+72	763	44.4	0
+72	763	44.5	0
+72	763	44.6	0
+72	763	44.7	0
+72	763	44.8	0
+72	763	44.9	0
+72	763	45	0
+72	763	45.1	0
+72	763	45.2	0
+72	763	45.3	0
+72	763	45.4	0
+72	763	45.5	0
+72	763	45.6	0
+72	763	45.7	0
+72	763	45.8	0
+72	763	45.9	0
+72	763	46	0
+72	763	46.1	0
+72	763	46.2	0
+72	763	46.3	0
+72	763	46.4	0
+72	763	46.5	0
+72	763	46.6	0
+72	763	46.7	0
+72	763	46.8	0
+72	763	46.9	0
+72	763	47	0
+72	763	47.1	0
+72	763	47.2	0
+72	763	47.3	0
+72	763	47.4	0
+72	763	47.5	0
+72	763	47.6	0
+72	763	47.7	0
+72	763	47.8	0
+72	763	47.9	0
+72	763	48	0
+72	763	48.1	0
+72	763	48.2	0
+72	763	48.3	0
+72	763	48.4	0
+72	763	48.5	0
+72	763	48.6	0
+72	763	48.7	0
+72	763	48.8	0
+72	763	48.9	0
+72	763	49	0
+72	763	49.1	0
+72	763	49.2	0
+72	763	49.3	0
+72	763	49.4	0
+72	763	49.5	0
+72	763	49.6	0
+72	763	49.7	0
+72	763	49.8	0
+72	763	49.9	0
+72	763	50	0
+72	763	50.1	0
+72	763	50.2	0
+72	763	50.3	0
+72	763	50.4	0
+72	763	50.5	0
+72	763	50.6	0
+72	763	50.7	0
+72	763	50.8	0
+72	763	50.9	0
+72	763	51	0
+72	763	51.1	0
+72	763	51.2	0
+72	763	51.3	0
+72	763	51.4	0
+72	763	51.5	0
+72	763	51.6	0
+72	763	51.7	0
+72	763	51.8	0
+72	763	51.9	0
+72	763	52	0
+72	763	52.1	0
+72	763	52.2	0
+72	763	52.3	0
+72	763	52.4	0
+72	763	52.5	0
+72	763	52.6	0
+72	763	52.7	0
+72	763	52.8	0
+72	763	52.9	0
+72	763	53	0
+72	763	53.1	0
+72	763	53.2	0
+72	763	53.3	0
+72	763	53.4	0
+72	763	53.5	0
+72	763	53.6	0
+72	763	53.7	0
+72	763	53.8	0
+72	763	53.9	0
+72	763	54	0
+72	763	54.1	0
+72	763	54.2	0
+72	763	54.3	0
+72	763	54.4	0
+72	763	54.5	0
+72	763	54.6	0
+72	763	54.7	0
+72	763	54.8	0
+72	763	54.9	0
+72	763	55	0
+72	763	55.1	0
+72	763	55.2	0
+72	763	55.3	0
+72	763	55.4	0
+72	763	55.5	0
+72	763	55.6	0
+72	763	55.7	0
+72	763	55.8	0
+72	763	55.9	0
+72	763	56	0
+72	763	56.1	0
+72	763	56.2	0
+72	763	56.3	0
+72	763	56.4	0
+72	763	56.5	0
+72	763	56.6	0
+72	763	56.7	0
+72	763	56.8	0
+72	763	56.9	0
+72	763	57	0
+72	763	57.1	0
+72	763	57.2	0
+72	763	57.3	0
+72	763	57.4	0
+72	763	57.5	0
+72	763	57.6	0
+72	763	57.7	0
+72	763	57.8	0
+72	763	57.9	0
+72	763	58	0
+72	763	58.1	0
+72	763	58.2	0
+72	763	58.3	0
+72	763	58.4	0
+72	763	58.5	0
+72	763	58.6	0
+72	763	58.7	0
+72	763	58.8	0
+72	763	58.9	0
+72	763	59	0
+72	763	59.1	0
+72	763	59.2	0
+72	763	59.3	0
+72	763	59.4	0
+72	763	59.5	0
+72	763	59.6	0
+72	763	59.7	0
+72	763	59.8	0
+72	763	59.9	0
+72	763	60	0
+73	251	20.000152353281	0.000152353281
+73	259	20.000152353281	0.000152353281
+73	349	20.001017078176	0.001017078176
+74	251	20.000152353281	100
+75	252	20.000152353281	108
+76	254	20.000152353281	128
+77	254	20.000152353281	128
+78	257	20.000152353281	130
+79	257	20.000152353281	158
+80	257	20.000152353281	1
+80	303	20.000576371614	0
+81	257	20.000152353281	12
+82	257	20.000152353281	1
+82	272	20.000314371614	0
+82	278	20.000466371614	1
+82	302	20.000576371614	0
+83	261	20.000152511809	158
+83	295	20.000466549699	158
+83	319	20.000728669537	158
+83	351	20.001017236704	158
+84	261	20.000152511809	158
+84	295	20.000466549699	158
+84	319	20.000728669537	158
+84	351	20.001017236704	158
+85	261	20.000152511809	158
+85	295	20.000466549699	158
+85	319	20.000728669537	158
+85	351	20.001017236704	158
+86	261	20.000152511809	158
+86	295	20.000466549699	158
+86	319	20.000728669537	158
+86	351	20.001017236704	158
+87	261	20.000152511809	130
+87	295	20.000466549699	130
+87	319	20.000728669537	130
+87	351	20.001017236704	130
+88	263	20.000152511809	128
+88	297	20.000466549699	128
+88	321	20.000728669537	128
+88	353	20.001017236704	128
+89	263	20.000152511809	128
+89	297	20.000466549699	128
+89	321	20.000728669537	128
+89	353	20.001017236704	128
+90	265	20.000152615437	158
+90	299	20.000466627404	158
+90	323	20.000728703199	158
+90	355	20.001017340332	158
+91	265	20.000152615437	158
+91	299	20.000466627404	158
+91	323	20.000728703199	158
+91	355	20.001017340332	158
+92	265	20.000152615437	158
+92	299	20.000466627404	158
+92	323	20.000728703199	158
+92	355	20.001017340332	158
+93	265	20.000152615437	158
+93	299	20.000466627404	158
+93	323	20.000728703199	158
+93	355	20.001017340332	158
+94	265	20.000152615437	130
+94	299	20.000466627404	130
+94	323	20.000728703199	130
+94	355	20.001017340332	130
+95	267	20.000152615437	128
+95	301	20.000466627404	128
+95	325	20.000728703199	128
+95	357	20.001017340332	128
+96	267	20.000152615437	128
+96	301	20.000466627404	128
+96	325	20.000728703199	128
+96	357	20.001017340332	128
+97	269	20.000314258461	158
+98	269	20.000314258461	0.000162
+99	269	20.000314258461	1
+99	276	20.000466258461	0
+100	269	20.000314258461	12000000
+101	269	20.000314258461	158
+102	269	20.000314258461	1
+102	276	20.000466258461	0
+103	270	20.000314258461	1
+103	271	20.000314258461	2
+103	276	20.000466258461	1
+103	277	20.000466258461	0
+104	276	20.000466258461	158
+105	276	20.000466258461	158
+106	276	20.000466258461	158
+107	276	20.000466258461	0.000152
+108	281	20.000466371614	128
+109	283	20.000466516922	158
+109	327	20.000728724895	158
+110	283	20.000466516922	158
+110	327	20.000728724895	158
+111	283	20.000466516922	158
+111	327	20.000728724895	158
+112	283	20.000466516922	158
+112	327	20.000728724895	158
+113	283	20.000466516922	130
+113	327	20.000728724895	130
+114	286	20.000466516922	108
+115	286	20.000466516922	1
+116	287	20.000466516922	100
+117	287	0.1	0
+117	287	0.2	0
+117	287	0.3	0
+117	287	0.4	0
+117	287	0.5	0
+117	287	0.6	0
+117	287	0.7	0
+117	287	0.8	0
+117	287	0.9	0
+117	287	1	0
+117	287	1.1	0
+117	287	1.2	0
+117	287	1.3	0
+117	287	1.4	0
+117	287	1.5	0
+117	287	1.6	0
+117	287	1.7	0
+117	287	1.8	0
+117	287	1.9	0
+117	287	2	0
+117	287	2.1	0
+117	287	2.2	0
+117	287	2.3	0
+117	287	2.4	0
+117	287	2.5	0
+117	287	2.6	0
+117	287	2.7	0
+117	287	2.8	0
+117	287	2.9	0
+117	287	3	0
+117	287	3.1	0
+117	287	3.2	0
+117	287	3.3	0
+117	287	3.4	0
+117	287	3.5	0
+117	287	3.6	0
+117	287	3.7	0
+117	287	3.8	0
+117	287	3.9	0
+117	287	4	0
+117	287	4.1	0
+117	287	4.2	0
+117	287	4.3	0
+117	287	4.4	0
+117	287	4.5	0
+117	287	4.6	0
+117	287	4.7	0
+117	287	4.8	0
+117	287	4.9	0
+117	287	5	0
+117	287	5.1	0
+117	287	5.2	0
+117	287	5.3	0
+117	287	5.4	0
+117	287	5.5	0
+117	287	5.6	0
+117	287	5.7	0
+117	287	5.8	0
+117	287	5.9	0
+117	287	6	0
+117	287	6.1	0
+117	287	6.2	0
+117	287	6.3	0
+117	287	6.4	0
+117	287	6.5	0
+117	287	6.6	0
+117	287	6.7	0
+117	287	6.8	0
+117	287	6.9	0
+117	287	7	0
+117	287	7.1	0
+117	287	7.2	0
+117	287	7.3	0
+117	287	7.4	0
+117	287	7.5	0
+117	287	7.6	0
+117	287	7.7	0
+117	287	7.8	0
+117	287	7.9	0
+117	287	8	0
+117	287	8.1	0
+117	287	8.2	0
+117	287	8.3	0
+117	287	8.4	0
+117	287	8.5	0
+117	287	8.6	0
+117	287	8.7	0
+117	287	8.8	0
+117	287	8.9	0
+117	287	9	0
+117	287	9.1	0
+117	287	9.2	0
+117	287	9.3	0
+117	287	9.4	0
+117	287	9.5	0
+117	287	9.6	0
+117	287	9.7	0
+117	287	9.8	0
+117	287	9.9	0
+117	287	10	0
+117	287	10.1	0
+117	287	10.2	0
+117	287	10.3	0
+117	287	10.4	0
+117	287	10.5	0
+117	287	10.6	0
+117	287	10.7	0
+117	287	10.8	0
+117	287	10.9	0
+117	287	11	0
+117	287	11.1	0
+117	287	11.2	0
+117	287	11.3	0
+117	287	11.4	0
+117	287	11.5	0
+117	287	11.6	0
+117	287	11.7	0
+117	287	11.8	0
+117	287	11.9	0
+117	287	12	0
+117	287	12.1	0
+117	287	12.2	0
+117	287	12.3	0
+117	287	12.4	0
+117	287	12.5	0
+117	287	12.6	0
+117	287	12.7	0
+117	287	12.8	0
+117	287	12.9	0
+117	287	13	0
+117	287	13.1	0
+117	287	13.2	0
+117	287	13.3	0
+117	287	13.4	0
+117	287	13.5	0
+117	287	13.6	0
+117	287	13.7	0
+117	287	13.8	0
+117	287	13.9	0
+117	287	14	0
+117	287	14.1	0
+117	287	14.2	0
+117	287	14.3	0
+117	287	14.4	0
+117	287	14.5	0
+117	287	14.6	0
+117	287	14.7	0
+117	287	14.8	0
+117	287	14.9	0
+117	287	15	0
+117	287	15.1	0
+117	287	15.2	0
+117	287	15.3	0
+117	287	15.4	0
+117	287	15.5	0
+117	287	15.6	0
+117	287	15.7	0
+117	287	15.8	0
+117	287	15.9	0
+117	287	16	0
+117	287	16.1	0
+117	287	16.2	0
+117	287	16.3	0
+117	287	16.4	0
+117	287	16.5	0
+117	287	16.6	0
+117	287	16.7	0
+117	287	16.8	0
+117	287	16.9	0
+117	287	17	0
+117	287	17.1	0
+117	287	17.2	0
+117	287	17.3	0
+117	287	17.4	0
+117	287	17.5	0
+117	287	17.6	0
+117	287	17.7	0
+117	287	17.8	0
+117	287	17.9	0
+117	287	18	0
+117	287	18.1	0
+117	287	18.2	0
+117	287	18.3	0
+117	287	18.4	0
+117	287	18.5	0
+117	287	18.6	0
+117	287	18.7	0
+117	287	18.8	0
+117	287	18.9	0
+117	287	19	0
+117	287	19.1	0
+117	287	19.2	0
+117	287	19.3	0
+117	287	19.4	0
+117	287	19.5	0
+117	287	19.6	0
+117	287	19.7	0
+117	287	19.8	0
+117	287	19.9	0
+117	287	20	0
+117	763	20.1	8000
+117	763	20.2	0
+117	763	20.3	0
+117	763	20.4	0
+117	763	20.5	0
+117	763	20.6	0
+117	763	20.7	0
+117	763	20.8	0
+117	763	20.9	0
+117	763	21	0
+117	763	21.1	0
+117	763	21.2	0
+117	763	21.3	0
+117	763	21.4	0
+117	763	21.5	0
+117	763	21.6	0
+117	763	21.7	0
+117	763	21.8	0
+117	763	21.9	0
+117	763	22	0
+117	763	22.1	0
+117	763	22.2	0
+117	763	22.3	0
+117	763	22.4	0
+117	763	22.5	0
+117	763	22.6	0
+117	763	22.7	0
+117	763	22.8	0
+117	763	22.9	0
+117	763	23	0
+117	763	23.1	0
+117	763	23.2	0
+117	763	23.3	0
+117	763	23.4	0
+117	763	23.5	0
+117	763	23.6	0
+117	763	23.7	0
+117	763	23.8	0
+117	763	23.9	0
+117	763	24	0
+117	763	24.1	0
+117	763	24.2	0
+117	763	24.3	0
+117	763	24.4	0
+117	763	24.5	0
+117	763	24.6	0
+117	763	24.7	0
+117	763	24.8	0
+117	763	24.9	0
+117	763	25	0
+117	763	25.1	0
+117	763	25.2	0
+117	763	25.3	0
+117	763	25.4	0
+117	763	25.5	0
+117	763	25.6	0
+117	763	25.7	0
+117	763	25.8	0
+117	763	25.9	0
+117	763	26	0
+117	763	26.1	0
+117	763	26.2	0
+117	763	26.3	0
+117	763	26.4	0
+117	763	26.5	0
+117	763	26.6	0
+117	763	26.7	0
+117	763	26.8	0
+117	763	26.9	0
+117	763	27	0
+117	763	27.1	0
+117	763	27.2	0
+117	763	27.3	0
+117	763	27.4	0
+117	763	27.5	0
+117	763	27.6	0
+117	763	27.7	0
+117	763	27.8	0
+117	763	27.9	0
+117	763	28	0
+117	763	28.1	0
+117	763	28.2	0
+117	763	28.3	0
+117	763	28.4	0
+117	763	28.5	0
+117	763	28.6	0
+117	763	28.7	0
+117	763	28.8	0
+117	763	28.9	0
+117	763	29	0
+117	763	29.1	0
+117	763	29.2	0
+117	763	29.3	0
+117	763	29.4	0
+117	763	29.5	0
+117	763	29.6	0
+117	763	29.7	0
+117	763	29.8	0
+117	763	29.9	0
+117	763	30	0
+117	763	30.1	0
+117	763	30.2	0
+117	763	30.3	0
+117	763	30.4	0
+117	763	30.5	0
+117	763	30.6	0
+117	763	30.7	0
+117	763	30.8	0
+117	763	30.9	0
+117	763	31	0
+117	763	31.1	0
+117	763	31.2	0
+117	763	31.3	0
+117	763	31.4	0
+117	763	31.5	0
+117	763	31.6	0
+117	763	31.7	0
+117	763	31.8	0
+117	763	31.9	0
+117	763	32	0
+117	763	32.1	0
+117	763	32.2	0
+117	763	32.3	0
+117	763	32.4	0
+117	763	32.5	0
+117	763	32.6	0
+117	763	32.7	0
+117	763	32.8	0
+117	763	32.9	0
+117	763	33	0
+117	763	33.1	0
+117	763	33.2	0
+117	763	33.3	0
+117	763	33.4	0
+117	763	33.5	0
+117	763	33.6	0
+117	763	33.7	0
+117	763	33.8	0
+117	763	33.9	0
+117	763	34	0
+117	763	34.1	0
+117	763	34.2	0
+117	763	34.3	0
+117	763	34.4	0
+117	763	34.5	0
+117	763	34.6	0
+117	763	34.7	0
+117	763	34.8	0
+117	763	34.9	0
+117	763	35	0
+117	763	35.1	0
+117	763	35.2	0
+117	763	35.3	0
+117	763	35.4	0
+117	763	35.5	0
+117	763	35.6	0
+117	763	35.7	0
+117	763	35.8	0
+117	763	35.9	0
+117	763	36	0
+117	763	36.1	0
+117	763	36.2	0
+117	763	36.3	0
+117	763	36.4	0
+117	763	36.5	0
+117	763	36.6	0
+117	763	36.7	0
+117	763	36.8	0
+117	763	36.9	0
+117	763	37	0
+117	763	37.1	0
+117	763	37.2	0
+117	763	37.3	0
+117	763	37.4	0
+117	763	37.5	0
+117	763	37.6	0
+117	763	37.7	0
+117	763	37.8	0
+117	763	37.9	0
+117	763	38	0
+117	763	38.1	0
+117	763	38.2	0
+117	763	38.3	0
+117	763	38.4	0
+117	763	38.5	0
+117	763	38.6	0
+117	763	38.7	0
+117	763	38.8	0
+117	763	38.9	0
+117	763	39	0
+117	763	39.1	0
+117	763	39.2	0
+117	763	39.3	0
+117	763	39.4	0
+117	763	39.5	0
+117	763	39.6	0
+117	763	39.7	0
+117	763	39.8	0
+117	763	39.9	0
+117	763	40	0
+117	763	40.1	0
+117	763	40.2	0
+117	763	40.3	0
+117	763	40.4	0
+117	763	40.5	0
+117	763	40.6	0
+117	763	40.7	0
+117	763	40.8	0
+117	763	40.9	0
+117	763	41	0
+117	763	41.1	0
+117	763	41.2	0
+117	763	41.3	0
+117	763	41.4	0
+117	763	41.5	0
+117	763	41.6	0
+117	763	41.7	0
+117	763	41.8	0
+117	763	41.9	0
+117	763	42	0
+117	763	42.1	0
+117	763	42.2	0
+117	763	42.3	0
+117	763	42.4	0
+117	763	42.5	0
+117	763	42.6	0
+117	763	42.7	0
+117	763	42.8	0
+117	763	42.9	0
+117	763	43	0
+117	763	43.1	0
+117	763	43.2	0
+117	763	43.3	0
+117	763	43.4	0
+117	763	43.5	0
+117	763	43.6	0
+117	763	43.7	0
+117	763	43.8	0
+117	763	43.9	0
+117	763	44	0
+117	763	44.1	0
+117	763	44.2	0
+117	763	44.3	0
+117	763	44.4	0
+117	763	44.5	0
+117	763	44.6	0
+117	763	44.7	0
+117	763	44.8	0
+117	763	44.9	0
+117	763	45	0
+117	763	45.1	0
+117	763	45.2	0
+117	763	45.3	0
+117	763	45.4	0
+117	763	45.5	0
+117	763	45.6	0
+117	763	45.7	0
+117	763	45.8	0
+117	763	45.9	0
+117	763	46	0
+117	763	46.1	0
+117	763	46.2	0
+117	763	46.3	0
+117	763	46.4	0
+117	763	46.5	0
+117	763	46.6	0
+117	763	46.7	0
+117	763	46.8	0
+117	763	46.9	0
+117	763	47	0
+117	763	47.1	0
+117	763	47.2	0
+117	763	47.3	0
+117	763	47.4	0
+117	763	47.5	0
+117	763	47.6	0
+117	763	47.7	0
+117	763	47.8	0
+117	763	47.9	0
+117	763	48	0
+117	763	48.1	0
+117	763	48.2	0
+117	763	48.3	0
+117	763	48.4	0
+117	763	48.5	0
+117	763	48.6	0
+117	763	48.7	0
+117	763	48.8	0
+117	763	48.9	0
+117	763	49	0
+117	763	49.1	0
+117	763	49.2	0
+117	763	49.3	0
+117	763	49.4	0
+117	763	49.5	0
+117	763	49.6	0
+117	763	49.7	0
+117	763	49.8	0
+117	763	49.9	0
+117	763	50	0
+117	763	50.1	0
+117	763	50.2	0
+117	763	50.3	0
+117	763	50.4	0
+117	763	50.5	0
+117	763	50.6	0
+117	763	50.7	0
+117	763	50.8	0
+117	763	50.9	0
+117	763	51	0
+117	763	51.1	0
+117	763	51.2	0
+117	763	51.3	0
+117	763	51.4	0
+117	763	51.5	0
+117	763	51.6	0
+117	763	51.7	0
+117	763	51.8	0
+117	763	51.9	0
+117	763	52	0
+117	763	52.1	0
+117	763	52.2	0
+117	763	52.3	0
+117	763	52.4	0
+117	763	52.5	0
+117	763	52.6	0
+117	763	52.7	0
+117	763	52.8	0
+117	763	52.9	0
+117	763	53	0
+117	763	53.1	0
+117	763	53.2	0
+117	763	53.3	0
+117	763	53.4	0
+117	763	53.5	0
+117	763	53.6	0
+117	763	53.7	0
+117	763	53.8	0
+117	763	53.9	0
+117	763	54	0
+117	763	54.1	0
+117	763	54.2	0
+117	763	54.3	0
+117	763	54.4	0
+117	763	54.5	0
+117	763	54.6	0
+117	763	54.7	0
+117	763	54.8	0
+117	763	54.9	0
+117	763	55	0
+117	763	55.1	0
+117	763	55.2	0
+117	763	55.3	0
+117	763	55.4	0
+117	763	55.5	0
+117	763	55.6	0
+117	763	55.7	0
+117	763	55.8	0
+117	763	55.9	0
+117	763	56	0
+117	763	56.1	0
+117	763	56.2	0
+117	763	56.3	0
+117	763	56.4	0
+117	763	56.5	0
+117	763	56.6	0
+117	763	56.7	0
+117	763	56.8	0
+117	763	56.9	0
+117	763	57	0
+117	763	57.1	0
+117	763	57.2	0
+117	763	57.3	0
+117	763	57.4	0
+117	763	57.5	0
+117	763	57.6	0
+117	763	57.7	0
+117	763	57.8	0
+117	763	57.9	0
+117	763	58	0
+117	763	58.1	0
+117	763	58.2	0
+117	763	58.3	0
+117	763	58.4	0
+117	763	58.5	0
+117	763	58.6	0
+117	763	58.7	0
+117	763	58.8	0
+117	763	58.9	0
+117	763	59	0
+117	763	59.1	0
+117	763	59.2	0
+117	763	59.3	0
+117	763	59.4	0
+117	763	59.5	0
+117	763	59.6	0
+117	763	59.7	0
+117	763	59.8	0
+117	763	59.9	0
+117	763	60	0
+118	287	20.000466516922	0.000466516922
+119	303	20.000576371614	158
+120	303	20.000576371614	0.000424018333
+121	303	20.000576371614	1
+121	310	20.000728371614	0
+122	303	20.000576371614	12000000
+123	303	20.000576371614	158
+124	303	20.000576371614	1
+124	310	20.000728371614	0
+125	304	20.000576371614	1
+125	305	20.000576371614	2
+125	310	20.000728371614	1
+125	311	20.000728371614	0
+126	310	20.000728371614	158
+127	310	20.000728371614	158
+128	310	20.000728371614	158
+129	310	20.000728371614	0.000152
+130	763	0.1	0
+130	763	0.2	0
+130	763	0.3	0
+130	763	0.4	0
+130	763	0.5	0
+130	763	0.6	0
+130	763	0.7	0
+130	763	0.8	0
+130	763	0.9	0
+130	763	1	0
+130	763	1.1	0
+130	763	1.2	0
+130	763	1.3	0
+130	763	1.4	0
+130	763	1.5	0
+130	763	1.6	0
+130	763	1.7	0
+130	763	1.8	0
+130	763	1.9	0
+130	763	2	0
+130	763	2.1	0
+130	763	2.2	0
+130	763	2.3	0
+130	763	2.4	0
+130	763	2.5	0
+130	763	2.6	0
+130	763	2.7	0
+130	763	2.8	0
+130	763	2.9	0
+130	763	3	0
+130	763	3.1	0
+130	763	3.2	0
+130	763	3.3	0
+130	763	3.4	0
+130	763	3.5	0
+130	763	3.6	0
+130	763	3.7	0
+130	763	3.8	0
+130	763	3.9	0
+130	763	4	0
+130	763	4.1	0
+130	763	4.2	0
+130	763	4.3	0
+130	763	4.4	0
+130	763	4.5	0
+130	763	4.6	0
+130	763	4.7	0
+130	763	4.8	0
+130	763	4.9	0
+130	763	5	0
+130	763	5.1	0
+130	763	5.2	0
+130	763	5.3	0
+130	763	5.4	0
+130	763	5.5	0
+130	763	5.6	0
+130	763	5.7	0
+130	763	5.8	0
+130	763	5.9	0
+130	763	6	0
+130	763	6.1	0
+130	763	6.2	0
+130	763	6.3	0
+130	763	6.4	0
+130	763	6.5	0
+130	763	6.6	0
+130	763	6.7	0
+130	763	6.8	0
+130	763	6.9	0
+130	763	7	0
+130	763	7.1	0
+130	763	7.2	0
+130	763	7.3	0
+130	763	7.4	0
+130	763	7.5	0
+130	763	7.6	0
+130	763	7.7	0
+130	763	7.8	0
+130	763	7.9	0
+130	763	8	0
+130	763	8.1	0
+130	763	8.2	0
+130	763	8.3	0
+130	763	8.4	0
+130	763	8.5	0
+130	763	8.6	0
+130	763	8.7	0
+130	763	8.8	0
+130	763	8.9	0
+130	763	9	0
+130	763	9.1	0
+130	763	9.2	0
+130	763	9.3	0
+130	763	9.4	0
+130	763	9.5	0
+130	763	9.6	0
+130	763	9.7	0
+130	763	9.8	0
+130	763	9.9	0
+130	763	10	0
+130	763	10.1	0
+130	763	10.2	0
+130	763	10.3	0
+130	763	10.4	0
+130	763	10.5	0
+130	763	10.6	0
+130	763	10.7	0
+130	763	10.8	0
+130	763	10.9	0
+130	763	11	0
+130	763	11.1	0
+130	763	11.2	0
+130	763	11.3	0
+130	763	11.4	0
+130	763	11.5	0
+130	763	11.6	0
+130	763	11.7	0
+130	763	11.8	0
+130	763	11.9	0
+130	763	12	0
+130	763	12.1	0
+130	763	12.2	0
+130	763	12.3	0
+130	763	12.4	0
+130	763	12.5	0
+130	763	12.6	0
+130	763	12.7	0
+130	763	12.8	0
+130	763	12.9	0
+130	763	13	0
+130	763	13.1	0
+130	763	13.2	0
+130	763	13.3	0
+130	763	13.4	0
+130	763	13.5	0
+130	763	13.6	0
+130	763	13.7	0
+130	763	13.8	0
+130	763	13.9	0
+130	763	14	0
+130	763	14.1	0
+130	763	14.2	0
+130	763	14.3	0
+130	763	14.4	0
+130	763	14.5	0
+130	763	14.6	0
+130	763	14.7	0
+130	763	14.8	0
+130	763	14.9	0
+130	763	15	0
+130	763	15.1	0
+130	763	15.2	0
+130	763	15.3	0
+130	763	15.4	0
+130	763	15.5	0
+130	763	15.6	0
+130	763	15.7	0
+130	763	15.8	0
+130	763	15.9	0
+130	763	16	0
+130	763	16.1	0
+130	763	16.2	0
+130	763	16.3	0
+130	763	16.4	0
+130	763	16.5	0
+130	763	16.6	0
+130	763	16.7	0
+130	763	16.8	0
+130	763	16.9	0
+130	763	17	0
+130	763	17.1	0
+130	763	17.2	0
+130	763	17.3	0
+130	763	17.4	0
+130	763	17.5	0
+130	763	17.6	0
+130	763	17.7	0
+130	763	17.8	0
+130	763	17.9	0
+130	763	18	0
+130	763	18.1	0
+130	763	18.2	0
+130	763	18.3	0
+130	763	18.4	0
+130	763	18.5	0
+130	763	18.6	0
+130	763	18.7	0
+130	763	18.8	0
+130	763	18.9	0
+130	763	19	0
+130	763	19.1	0
+130	763	19.2	0
+130	763	19.3	0
+130	763	19.4	0
+130	763	19.5	0
+130	763	19.6	0
+130	763	19.7	0
+130	763	19.8	0
+130	763	19.9	0
+130	763	20	0
+130	763	20.1	0
+130	763	20.2	0
+130	763	20.3	0
+130	763	20.4	0
+130	763	20.5	0
+130	763	20.6	0
+130	763	20.7	0
+130	763	20.8	0
+130	763	20.9	0
+130	763	21	0
+130	763	21.1	0
+130	763	21.2	0
+130	763	21.3	0
+130	763	21.4	0
+130	763	21.5	0
+130	763	21.6	0
+130	763	21.7	0
+130	763	21.8	0
+130	763	21.9	0
+130	763	22	0
+130	763	22.1	0
+130	763	22.2	0
+130	763	22.3	0
+130	763	22.4	0
+130	763	22.5	0
+130	763	22.6	0
+130	763	22.7	0
+130	763	22.8	0
+130	763	22.9	0
+130	763	23	0
+130	763	23.1	0
+130	763	23.2	0
+130	763	23.3	0
+130	763	23.4	0
+130	763	23.5	0
+130	763	23.6	0
+130	763	23.7	0
+130	763	23.8	0
+130	763	23.9	0
+130	763	24	0
+130	763	24.1	0
+130	763	24.2	0
+130	763	24.3	0
+130	763	24.4	0
+130	763	24.5	0
+130	763	24.6	0
+130	763	24.7	0
+130	763	24.8	0
+130	763	24.9	0
+130	763	25	0
+130	763	25.1	0
+130	763	25.2	0
+130	763	25.3	0
+130	763	25.4	0
+130	763	25.5	0
+130	763	25.6	0
+130	763	25.7	0
+130	763	25.8	0
+130	763	25.9	0
+130	763	26	0
+130	763	26.1	0
+130	763	26.2	0
+130	763	26.3	0
+130	763	26.4	0
+130	763	26.5	0
+130	763	26.6	0
+130	763	26.7	0
+130	763	26.8	0
+130	763	26.9	0
+130	763	27	0
+130	763	27.1	0
+130	763	27.2	0
+130	763	27.3	0
+130	763	27.4	0
+130	763	27.5	0
+130	763	27.6	0
+130	763	27.7	0
+130	763	27.8	0
+130	763	27.9	0
+130	763	28	0
+130	763	28.1	0
+130	763	28.2	0
+130	763	28.3	0
+130	763	28.4	0
+130	763	28.5	0
+130	763	28.6	0
+130	763	28.7	0
+130	763	28.8	0
+130	763	28.9	0
+130	763	29	0
+130	763	29.1	0
+130	763	29.2	0
+130	763	29.3	0
+130	763	29.4	0
+130	763	29.5	0
+130	763	29.6	0
+130	763	29.7	0
+130	763	29.8	0
+130	763	29.9	0
+130	763	30	0
+130	763	30.1	0
+130	763	30.2	0
+130	763	30.3	0
+130	763	30.4	0
+130	763	30.5	0
+130	763	30.6	0
+130	763	30.7	0
+130	763	30.8	0
+130	763	30.9	0
+130	763	31	0
+130	763	31.1	0
+130	763	31.2	0
+130	763	31.3	0
+130	763	31.4	0
+130	763	31.5	0
+130	763	31.6	0
+130	763	31.7	0
+130	763	31.8	0
+130	763	31.9	0
+130	763	32	0
+130	763	32.1	0
+130	763	32.2	0
+130	763	32.3	0
+130	763	32.4	0
+130	763	32.5	0
+130	763	32.6	0
+130	763	32.7	0
+130	763	32.8	0
+130	763	32.9	0
+130	763	33	0
+130	763	33.1	0
+130	763	33.2	0
+130	763	33.3	0
+130	763	33.4	0
+130	763	33.5	0
+130	763	33.6	0
+130	763	33.7	0
+130	763	33.8	0
+130	763	33.9	0
+130	763	34	0
+130	763	34.1	0
+130	763	34.2	0
+130	763	34.3	0
+130	763	34.4	0
+130	763	34.5	0
+130	763	34.6	0
+130	763	34.7	0
+130	763	34.8	0
+130	763	34.9	0
+130	763	35	0
+130	763	35.1	0
+130	763	35.2	0
+130	763	35.3	0
+130	763	35.4	0
+130	763	35.5	0
+130	763	35.6	0
+130	763	35.7	0
+130	763	35.8	0
+130	763	35.9	0
+130	763	36	0
+130	763	36.1	0
+130	763	36.2	0
+130	763	36.3	0
+130	763	36.4	0
+130	763	36.5	0
+130	763	36.6	0
+130	763	36.7	0
+130	763	36.8	0
+130	763	36.9	0
+130	763	37	0
+130	763	37.1	0
+130	763	37.2	0
+130	763	37.3	0
+130	763	37.4	0
+130	763	37.5	0
+130	763	37.6	0
+130	763	37.7	0
+130	763	37.8	0
+130	763	37.9	0
+130	763	38	0
+130	763	38.1	0
+130	763	38.2	0
+130	763	38.3	0
+130	763	38.4	0
+130	763	38.5	0
+130	763	38.6	0
+130	763	38.7	0
+130	763	38.8	0
+130	763	38.9	0
+130	763	39	0
+130	763	39.1	0
+130	763	39.2	0
+130	763	39.3	0
+130	763	39.4	0
+130	763	39.5	0
+130	763	39.6	0
+130	763	39.7	0
+130	763	39.8	0
+130	763	39.9	0
+130	763	40	0
+130	763	40.1	0
+130	763	40.2	0
+130	763	40.3	0
+130	763	40.4	0
+130	763	40.5	0
+130	763	40.6	0
+130	763	40.7	0
+130	763	40.8	0
+130	763	40.9	0
+130	763	41	0
+130	763	41.1	0
+130	763	41.2	0
+130	763	41.3	0
+130	763	41.4	0
+130	763	41.5	0
+130	763	41.6	0
+130	763	41.7	0
+130	763	41.8	0
+130	763	41.9	0
+130	763	42	0
+130	763	42.1	0
+130	763	42.2	0
+130	763	42.3	0
+130	763	42.4	0
+130	763	42.5	0
+130	763	42.6	0
+130	763	42.7	0
+130	763	42.8	0
+130	763	42.9	0
+130	763	43	0
+130	763	43.1	0
+130	763	43.2	0
+130	763	43.3	0
+130	763	43.4	0
+130	763	43.5	0
+130	763	43.6	0
+130	763	43.7	0
+130	763	43.8	0
+130	763	43.9	0
+130	763	44	0
+130	763	44.1	0
+130	763	44.2	0
+130	763	44.3	0
+130	763	44.4	0
+130	763	44.5	0
+130	763	44.6	0
+130	763	44.7	0
+130	763	44.8	0
+130	763	44.9	0
+130	763	45	0
+130	763	45.1	0
+130	763	45.2	0
+130	763	45.3	0
+130	763	45.4	0
+130	763	45.5	0
+130	763	45.6	0
+130	763	45.7	0
+130	763	45.8	0
+130	763	45.9	0
+130	763	46	0
+130	763	46.1	0
+130	763	46.2	0
+130	763	46.3	0
+130	763	46.4	0
+130	763	46.5	0
+130	763	46.6	0
+130	763	46.7	0
+130	763	46.8	0
+130	763	46.9	0
+130	763	47	0
+130	763	47.1	0
+130	763	47.2	0
+130	763	47.3	0
+130	763	47.4	0
+130	763	47.5	0
+130	763	47.6	0
+130	763	47.7	0
+130	763	47.8	0
+130	763	47.9	0
+130	763	48	0
+130	763	48.1	0
+130	763	48.2	0
+130	763	48.3	0
+130	763	48.4	0
+130	763	48.5	0
+130	763	48.6	0
+130	763	48.7	0
+130	763	48.8	0
+130	763	48.9	0
+130	763	49	0
+130	763	49.1	0
+130	763	49.2	0
+130	763	49.3	0
+130	763	49.4	0
+130	763	49.5	0
+130	763	49.6	0
+130	763	49.7	0
+130	763	49.8	0
+130	763	49.9	0
+130	763	50	0
+130	763	50.1	0
+130	763	50.2	0
+130	763	50.3	0
+130	763	50.4	0
+130	763	50.5	0
+130	763	50.6	0
+130	763	50.7	0
+130	763	50.8	0
+130	763	50.9	0
+130	763	51	0
+130	763	51.1	0
+130	763	51.2	0
+130	763	51.3	0
+130	763	51.4	0
+130	763	51.5	0
+130	763	51.6	0
+130	763	51.7	0
+130	763	51.8	0
+130	763	51.9	0
+130	763	52	0
+130	763	52.1	0
+130	763	52.2	0
+130	763	52.3	0
+130	763	52.4	0
+130	763	52.5	0
+130	763	52.6	0
+130	763	52.7	0
+130	763	52.8	0
+130	763	52.9	0
+130	763	53	0
+130	763	53.1	0
+130	763	53.2	0
+130	763	53.3	0
+130	763	53.4	0
+130	763	53.5	0
+130	763	53.6	0
+130	763	53.7	0
+130	763	53.8	0
+130	763	53.9	0
+130	763	54	0
+130	763	54.1	0
+130	763	54.2	0
+130	763	54.3	0
+130	763	54.4	0
+130	763	54.5	0
+130	763	54.6	0
+130	763	54.7	0
+130	763	54.8	0
+130	763	54.9	0
+130	763	55	0
+130	763	55.1	0
+130	763	55.2	0
+130	763	55.3	0
+130	763	55.4	0
+130	763	55.5	0
+130	763	55.6	0
+130	763	55.7	0
+130	763	55.8	0
+130	763	55.9	0
+130	763	56	0
+130	763	56.1	0
+130	763	56.2	0
+130	763	56.3	0
+130	763	56.4	0
+130	763	56.5	0
+130	763	56.6	0
+130	763	56.7	0
+130	763	56.8	0
+130	763	56.9	0
+130	763	57	0
+130	763	57.1	0
+130	763	57.2	0
+130	763	57.3	0
+130	763	57.4	0
+130	763	57.5	0
+130	763	57.6	0
+130	763	57.7	0
+130	763	57.8	0
+130	763	57.9	0
+130	763	58	0
+130	763	58.1	0
+130	763	58.2	0
+130	763	58.3	0
+130	763	58.4	0
+130	763	58.5	0
+130	763	58.6	0
+130	763	58.7	0
+130	763	58.8	0
+130	763	58.9	0
+130	763	59	0
+130	763	59.1	0
+130	763	59.2	0
+130	763	59.3	0
+130	763	59.4	0
+130	763	59.5	0
+130	763	59.6	0
+130	763	59.7	0
+130	763	59.8	0
+130	763	59.9	0
+130	763	60	0
+131	763	0.1	0
+131	763	0.2	0
+131	763	0.3	0
+131	763	0.4	0
+131	763	0.5	0
+131	763	0.6	0
+131	763	0.7	0
+131	763	0.8	0
+131	763	0.9	0
+131	763	1	0
+131	763	1.1	0
+131	763	1.2	0
+131	763	1.3	0
+131	763	1.4	0
+131	763	1.5	0
+131	763	1.6	0
+131	763	1.7	0
+131	763	1.8	0
+131	763	1.9	0
+131	763	2	0
+131	763	2.1	0
+131	763	2.2	0
+131	763	2.3	0
+131	763	2.4	0
+131	763	2.5	0
+131	763	2.6	0
+131	763	2.7	0
+131	763	2.8	0
+131	763	2.9	0
+131	763	3	0
+131	763	3.1	0
+131	763	3.2	0
+131	763	3.3	0
+131	763	3.4	0
+131	763	3.5	0
+131	763	3.6	0
+131	763	3.7	0
+131	763	3.8	0
+131	763	3.9	0
+131	763	4	0
+131	763	4.1	0
+131	763	4.2	0
+131	763	4.3	0
+131	763	4.4	0
+131	763	4.5	0
+131	763	4.6	0
+131	763	4.7	0
+131	763	4.8	0
+131	763	4.9	0
+131	763	5	0
+131	763	5.1	0
+131	763	5.2	0
+131	763	5.3	0
+131	763	5.4	0
+131	763	5.5	0
+131	763	5.6	0
+131	763	5.7	0
+131	763	5.8	0
+131	763	5.9	0
+131	763	6	0
+131	763	6.1	0
+131	763	6.2	0
+131	763	6.3	0
+131	763	6.4	0
+131	763	6.5	0
+131	763	6.6	0
+131	763	6.7	0
+131	763	6.8	0
+131	763	6.9	0
+131	763	7	0
+131	763	7.1	0
+131	763	7.2	0
+131	763	7.3	0
+131	763	7.4	0
+131	763	7.5	0
+131	763	7.6	0
+131	763	7.7	0
+131	763	7.8	0
+131	763	7.9	0
+131	763	8	0
+131	763	8.1	0
+131	763	8.2	0
+131	763	8.3	0
+131	763	8.4	0
+131	763	8.5	0
+131	763	8.6	0
+131	763	8.7	0
+131	763	8.8	0
+131	763	8.9	0
+131	763	9	0
+131	763	9.1	0
+131	763	9.2	0
+131	763	9.3	0
+131	763	9.4	0
+131	763	9.5	0
+131	763	9.6	0
+131	763	9.7	0
+131	763	9.8	0
+131	763	9.9	0
+131	763	10	0
+131	763	10.1	0
+131	763	10.2	0
+131	763	10.3	0
+131	763	10.4	0
+131	763	10.5	0
+131	763	10.6	0
+131	763	10.7	0
+131	763	10.8	0
+131	763	10.9	0
+131	763	11	0
+131	763	11.1	0
+131	763	11.2	0
+131	763	11.3	0
+131	763	11.4	0
+131	763	11.5	0
+131	763	11.6	0
+131	763	11.7	0
+131	763	11.8	0
+131	763	11.9	0
+131	763	12	0
+131	763	12.1	0
+131	763	12.2	0
+131	763	12.3	0
+131	763	12.4	0
+131	763	12.5	0
+131	763	12.6	0
+131	763	12.7	0
+131	763	12.8	0
+131	763	12.9	0
+131	763	13	0
+131	763	13.1	0
+131	763	13.2	0
+131	763	13.3	0
+131	763	13.4	0
+131	763	13.5	0
+131	763	13.6	0
+131	763	13.7	0
+131	763	13.8	0
+131	763	13.9	0
+131	763	14	0
+131	763	14.1	0
+131	763	14.2	0
+131	763	14.3	0
+131	763	14.4	0
+131	763	14.5	0
+131	763	14.6	0
+131	763	14.7	0
+131	763	14.8	0
+131	763	14.9	0
+131	763	15	0
+131	763	15.1	0
+131	763	15.2	0
+131	763	15.3	0
+131	763	15.4	0
+131	763	15.5	0
+131	763	15.6	0
+131	763	15.7	0
+131	763	15.8	0
+131	763	15.9	0
+131	763	16	0
+131	763	16.1	0
+131	763	16.2	0
+131	763	16.3	0
+131	763	16.4	0
+131	763	16.5	0
+131	763	16.6	0
+131	763	16.7	0
+131	763	16.8	0
+131	763	16.9	0
+131	763	17	0
+131	763	17.1	0
+131	763	17.2	0
+131	763	17.3	0
+131	763	17.4	0
+131	763	17.5	0
+131	763	17.6	0
+131	763	17.7	0
+131	763	17.8	0
+131	763	17.9	0
+131	763	18	0
+131	763	18.1	0
+131	763	18.2	0
+131	763	18.3	0
+131	763	18.4	0
+131	763	18.5	0
+131	763	18.6	0
+131	763	18.7	0
+131	763	18.8	0
+131	763	18.9	0
+131	763	19	0
+131	763	19.1	0
+131	763	19.2	0
+131	763	19.3	0
+131	763	19.4	0
+131	763	19.5	0
+131	763	19.6	0
+131	763	19.7	0
+131	763	19.8	0
+131	763	19.9	0
+131	763	20	0
+131	763	20.1	0
+131	763	20.2	0
+131	763	20.3	0
+131	763	20.4	0
+131	763	20.5	0
+131	763	20.6	0
+131	763	20.7	0
+131	763	20.8	0
+131	763	20.9	0
+131	763	21	0
+131	763	21.1	0
+131	763	21.2	0
+131	763	21.3	0
+131	763	21.4	0
+131	763	21.5	0
+131	763	21.6	0
+131	763	21.7	0
+131	763	21.8	0
+131	763	21.9	0
+131	763	22	0
+131	763	22.1	0
+131	763	22.2	0
+131	763	22.3	0
+131	763	22.4	0
+131	763	22.5	0
+131	763	22.6	0
+131	763	22.7	0
+131	763	22.8	0
+131	763	22.9	0
+131	763	23	0
+131	763	23.1	0
+131	763	23.2	0
+131	763	23.3	0
+131	763	23.4	0
+131	763	23.5	0
+131	763	23.6	0
+131	763	23.7	0
+131	763	23.8	0
+131	763	23.9	0
+131	763	24	0
+131	763	24.1	0
+131	763	24.2	0
+131	763	24.3	0
+131	763	24.4	0
+131	763	24.5	0
+131	763	24.6	0
+131	763	24.7	0
+131	763	24.8	0
+131	763	24.9	0
+131	763	25	0
+131	763	25.1	0
+131	763	25.2	0
+131	763	25.3	0
+131	763	25.4	0
+131	763	25.5	0
+131	763	25.6	0
+131	763	25.7	0
+131	763	25.8	0
+131	763	25.9	0
+131	763	26	0
+131	763	26.1	0
+131	763	26.2	0
+131	763	26.3	0
+131	763	26.4	0
+131	763	26.5	0
+131	763	26.6	0
+131	763	26.7	0
+131	763	26.8	0
+131	763	26.9	0
+131	763	27	0
+131	763	27.1	0
+131	763	27.2	0
+131	763	27.3	0
+131	763	27.4	0
+131	763	27.5	0
+131	763	27.6	0
+131	763	27.7	0
+131	763	27.8	0
+131	763	27.9	0
+131	763	28	0
+131	763	28.1	0
+131	763	28.2	0
+131	763	28.3	0
+131	763	28.4	0
+131	763	28.5	0
+131	763	28.6	0
+131	763	28.7	0
+131	763	28.8	0
+131	763	28.9	0
+131	763	29	0
+131	763	29.1	0
+131	763	29.2	0
+131	763	29.3	0
+131	763	29.4	0
+131	763	29.5	0
+131	763	29.6	0
+131	763	29.7	0
+131	763	29.8	0
+131	763	29.9	0
+131	763	30	0
+131	763	30.1	0
+131	763	30.2	0
+131	763	30.3	0
+131	763	30.4	0
+131	763	30.5	0
+131	763	30.6	0
+131	763	30.7	0
+131	763	30.8	0
+131	763	30.9	0
+131	763	31	0
+131	763	31.1	0
+131	763	31.2	0
+131	763	31.3	0
+131	763	31.4	0
+131	763	31.5	0
+131	763	31.6	0
+131	763	31.7	0
+131	763	31.8	0
+131	763	31.9	0
+131	763	32	0
+131	763	32.1	0
+131	763	32.2	0
+131	763	32.3	0
+131	763	32.4	0
+131	763	32.5	0
+131	763	32.6	0
+131	763	32.7	0
+131	763	32.8	0
+131	763	32.9	0
+131	763	33	0
+131	763	33.1	0
+131	763	33.2	0
+131	763	33.3	0
+131	763	33.4	0
+131	763	33.5	0
+131	763	33.6	0
+131	763	33.7	0
+131	763	33.8	0
+131	763	33.9	0
+131	763	34	0
+131	763	34.1	0
+131	763	34.2	0
+131	763	34.3	0
+131	763	34.4	0
+131	763	34.5	0
+131	763	34.6	0
+131	763	34.7	0
+131	763	34.8	0
+131	763	34.9	0
+131	763	35	0
+131	763	35.1	0
+131	763	35.2	0
+131	763	35.3	0
+131	763	35.4	0
+131	763	35.5	0
+131	763	35.6	0
+131	763	35.7	0
+131	763	35.8	0
+131	763	35.9	0
+131	763	36	0
+131	763	36.1	0
+131	763	36.2	0
+131	763	36.3	0
+131	763	36.4	0
+131	763	36.5	0
+131	763	36.6	0
+131	763	36.7	0
+131	763	36.8	0
+131	763	36.9	0
+131	763	37	0
+131	763	37.1	0
+131	763	37.2	0
+131	763	37.3	0
+131	763	37.4	0
+131	763	37.5	0
+131	763	37.6	0
+131	763	37.7	0
+131	763	37.8	0
+131	763	37.9	0
+131	763	38	0
+131	763	38.1	0
+131	763	38.2	0
+131	763	38.3	0
+131	763	38.4	0
+131	763	38.5	0
+131	763	38.6	0
+131	763	38.7	0
+131	763	38.8	0
+131	763	38.9	0
+131	763	39	0
+131	763	39.1	0
+131	763	39.2	0
+131	763	39.3	0
+131	763	39.4	0
+131	763	39.5	0
+131	763	39.6	0
+131	763	39.7	0
+131	763	39.8	0
+131	763	39.9	0
+131	763	40	0
+131	763	40.1	0
+131	763	40.2	0
+131	763	40.3	0
+131	763	40.4	0
+131	763	40.5	0
+131	763	40.6	0
+131	763	40.7	0
+131	763	40.8	0
+131	763	40.9	0
+131	763	41	0
+131	763	41.1	0
+131	763	41.2	0
+131	763	41.3	0
+131	763	41.4	0
+131	763	41.5	0
+131	763	41.6	0
+131	763	41.7	0
+131	763	41.8	0
+131	763	41.9	0
+131	763	42	0
+131	763	42.1	0
+131	763	42.2	0
+131	763	42.3	0
+131	763	42.4	0
+131	763	42.5	0
+131	763	42.6	0
+131	763	42.7	0
+131	763	42.8	0
+131	763	42.9	0
+131	763	43	0
+131	763	43.1	0
+131	763	43.2	0
+131	763	43.3	0
+131	763	43.4	0
+131	763	43.5	0
+131	763	43.6	0
+131	763	43.7	0
+131	763	43.8	0
+131	763	43.9	0
+131	763	44	0
+131	763	44.1	0
+131	763	44.2	0
+131	763	44.3	0
+131	763	44.4	0
+131	763	44.5	0
+131	763	44.6	0
+131	763	44.7	0
+131	763	44.8	0
+131	763	44.9	0
+131	763	45	0
+131	763	45.1	0
+131	763	45.2	0
+131	763	45.3	0
+131	763	45.4	0
+131	763	45.5	0
+131	763	45.6	0
+131	763	45.7	0
+131	763	45.8	0
+131	763	45.9	0
+131	763	46	0
+131	763	46.1	0
+131	763	46.2	0
+131	763	46.3	0
+131	763	46.4	0
+131	763	46.5	0
+131	763	46.6	0
+131	763	46.7	0
+131	763	46.8	0
+131	763	46.9	0
+131	763	47	0
+131	763	47.1	0
+131	763	47.2	0
+131	763	47.3	0
+131	763	47.4	0
+131	763	47.5	0
+131	763	47.6	0
+131	763	47.7	0
+131	763	47.8	0
+131	763	47.9	0
+131	763	48	0
+131	763	48.1	0
+131	763	48.2	0
+131	763	48.3	0
+131	763	48.4	0
+131	763	48.5	0
+131	763	48.6	0
+131	763	48.7	0
+131	763	48.8	0
+131	763	48.9	0
+131	763	49	0
+131	763	49.1	0
+131	763	49.2	0
+131	763	49.3	0
+131	763	49.4	0
+131	763	49.5	0
+131	763	49.6	0
+131	763	49.7	0
+131	763	49.8	0
+131	763	49.9	0
+131	763	50	0
+131	763	50.1	0
+131	763	50.2	0
+131	763	50.3	0
+131	763	50.4	0
+131	763	50.5	0
+131	763	50.6	0
+131	763	50.7	0
+131	763	50.8	0
+131	763	50.9	0
+131	763	51	0
+131	763	51.1	0
+131	763	51.2	0
+131	763	51.3	0
+131	763	51.4	0
+131	763	51.5	0
+131	763	51.6	0
+131	763	51.7	0
+131	763	51.8	0
+131	763	51.9	0
+131	763	52	0
+131	763	52.1	0
+131	763	52.2	0
+131	763	52.3	0
+131	763	52.4	0
+131	763	52.5	0
+131	763	52.6	0
+131	763	52.7	0
+131	763	52.8	0
+131	763	52.9	0
+131	763	53	0
+131	763	53.1	0
+131	763	53.2	0
+131	763	53.3	0
+131	763	53.4	0
+131	763	53.5	0
+131	763	53.6	0
+131	763	53.7	0
+131	763	53.8	0
+131	763	53.9	0
+131	763	54	0
+131	763	54.1	0
+131	763	54.2	0
+131	763	54.3	0
+131	763	54.4	0
+131	763	54.5	0
+131	763	54.6	0
+131	763	54.7	0
+131	763	54.8	0
+131	763	54.9	0
+131	763	55	0
+131	763	55.1	0
+131	763	55.2	0
+131	763	55.3	0
+131	763	55.4	0
+131	763	55.5	0
+131	763	55.6	0
+131	763	55.7	0
+131	763	55.8	0
+131	763	55.9	0
+131	763	56	0
+131	763	56.1	0
+131	763	56.2	0
+131	763	56.3	0
+131	763	56.4	0
+131	763	56.5	0
+131	763	56.6	0
+131	763	56.7	0
+131	763	56.8	0
+131	763	56.9	0
+131	763	57	0
+131	763	57.1	0
+131	763	57.2	0
+131	763	57.3	0
+131	763	57.4	0
+131	763	57.5	0
+131	763	57.6	0
+131	763	57.7	0
+131	763	57.8	0
+131	763	57.9	0
+131	763	58	0
+131	763	58.1	0
+131	763	58.2	0
+131	763	58.3	0
+131	763	58.4	0
+131	763	58.5	0
+131	763	58.6	0
+131	763	58.7	0
+131	763	58.8	0
+131	763	58.9	0
+131	763	59	0
+131	763	59.1	0
+131	763	59.2	0
+131	763	59.3	0
+131	763	59.4	0
+131	763	59.5	0
+131	763	59.6	0
+131	763	59.7	0
+131	763	59.8	0
+131	763	59.9	0
+131	763	60	0
+

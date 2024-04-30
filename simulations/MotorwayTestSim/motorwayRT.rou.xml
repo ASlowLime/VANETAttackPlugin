@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-04-03 22:40:22 by Eclipse SUMO duarouter Version 1.18.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="motorway.net.xml"/>
+        <route-files value="motorwayRT.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="motorwayRT.rou.xml"/>
+    </output>
+
+    <report>
+        <ignore-errors value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="1" depart="1.00">
+        <route edges="e1 e2 e3 e4 e5 e6 e7 e8 e9"/>
+    </vehicle>
+    <vehicle id="2" depart="2.00">
+        <route edges="e21 e22 e23 e24 e25 e26 e27 e28"/>
+    </vehicle>
+    <vehicle id="3" depart="3.00">
+        <route edges="e41 e42 e43 e44 e45 e46 e47 e48"/>
+    </vehicle>
+    <vehicle id="5" depart="5.00">
+        <route edges="e1 e2 e3 e4 e5 e6 e7 e8 e9"/>
+    </vehicle>
+    <vehicle id="6" depart="6.00">
+        <route edges="e21 e22 e23 e24 e25 e26 e27 e28"/>
+    </vehicle>
+    
+</routes>
